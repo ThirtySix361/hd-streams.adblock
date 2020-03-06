@@ -10,9 +10,10 @@ setInterval(function(e) {
             if ( e.id != "36" ) {
                 let daddy = e.parentNode;
                 let src = e.src;
+				if ( src.includes("youtube.com/embed/") ) { sandbox = "allow-scripts allow-same-origin" } else { sandbox = "allow-scripts" }
                 let btn = document.createElement("div");
                 btn.innerHTML = '<div style="text-align: center; color: #3279a8; font-size: 24px;">Ad\'s removed by ThirtySix</div>';
-                btn.innerHTML += '<iframe allowfullscreen id="36" style="width: 100%;" sandbox="allow-scripts" src="'+src+'"></iframe>';
+                btn.innerHTML += '<iframe allowfullscreen id="36" style="width: 100%;" sandbox="'+sandbox+'" src="'+src+'"></iframe>';
                 btn.style = "";
                 btn.href = src;
                 daddy.innerHTML = "";
